@@ -5,13 +5,11 @@ They are declared like so:
 
 ```rust
 struct Rectangle {
-    width: felt252,
-    height: felt252,
+    width: felt,
+    height: felt,
 }
 ```
 
 ## Further information
 
-- [Defining and instanciating Structs](https://cairo-book.github.io/ch04-01-defining-and-instantiating-structs.html)
-- [An example program using structs](https://cairo-book.github.io/ch04-02-an-example-program-using-structs.html)
-- [The Method syntax](https://cairo-book.github.io/ch04-03-method-syntax.html)
+- [Structures](https://link.medium.com/MeQ1Agthrxb#ff54]

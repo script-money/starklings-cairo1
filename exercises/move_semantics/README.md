@@ -2,7 +2,8 @@
 
 ## Further information
 
-For this section, reading the Cairo book references is especially important.
+For this section, reading the Rust book references is especially important. Cairo borrows a lot from rust, including the move semantics. While not everything is the same in Cairo, the concepts are very similar, and while we're waiting for proper Cairo documentation, the Rust book is a great resource.
 
-- [Ownership](https://cairo-book.github.io/ch03-00-understanding-ownership.html)
-- [Reference and borrowing](https://cairo-book.github.io/ch03-02-references-and-snapshots.html)
+
+- [Ownership](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
+- [Reference and borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)

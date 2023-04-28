@@ -4,4 +4,4 @@
 
 ## Further information
 
-- [If expressions](https://cairo-book.github.io/ch02-05-control-flow.html#if-expressions)
+- [Return statements and if expressions](https://link.medium.com/c8TqX7R3qxb#d97c)

@@ -6,4 +6,4 @@ Useful in combination with enums is Cairo's "pattern matching" facility, which m
 
 ## Further information
 
-- [Enums](https://cairo-book.github.io/ch05-01-enums.html)
+- [Enums](https://link.medium.com/IQGqboBerxb#7dff)

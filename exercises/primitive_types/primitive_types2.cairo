@@ -2,8 +2,6 @@
 // Fill in the rest of the line that has code missing!
 // No hints, there's no tricks, just get used to typing these :)
 
-// I AM NOT DONE
-
 use debug::PrintTrait;
 
 fn main() {
@@ -24,7 +22,8 @@ fn main() {
         ('Neither alphabetic nor numeric!').print();
     }
 
-    let // Finish this line like the example! What's your favorite short string?
+    let mut your_character =
+        'scriptmoney'; // Finish this line like the example! What's your favorite short string?
     // Try a letter, try a number, try a special character, try a short string!
     if is_alphabetic(
         ref your_character
@@ -65,21 +64,21 @@ fn is_numeric(ref char: felt252) -> bool {
 // Note: the following code is not part of the challenge, it's just here to make the code above work.
 // Direct felt252 comparisons have been removed from the core library, so we need to implement them ourselves.
 // There will probably be a string / short string type in the future
-impl PartialOrdFelt of PartialOrd<felt252> {
+impl PartialOrdFelt of PartialOrd::<felt252> {
     #[inline(always)]
-    fn le(lhs: felt252, rhs: felt252) -> bool {
-        !(rhs < lhs)
+    fn le(a: felt252, b: felt252) -> bool {
+        !(b < a)
     }
     #[inline(always)]
-    fn ge(lhs: felt252, rhs: felt252) -> bool {
-        !(lhs < rhs)
+    fn ge(a: felt252, b: felt252) -> bool {
+        !(a < b)
     }
     #[inline(always)]
-    fn lt(lhs: felt252, rhs: felt252) -> bool {
-        integer::u256_from_felt252(lhs) < integer::u256_from_felt252(rhs)
+    fn lt(a: felt252, b: felt252) -> bool {
+        integer::u256_from_felt252(a) < integer::u256_from_felt252(b)
     }
     #[inline(always)]
-    fn gt(lhs: felt252, rhs: felt252) -> bool {
-        rhs < lhs
+    fn gt(a: felt252, b: felt252) -> bool {
+        b < a
     }
 }

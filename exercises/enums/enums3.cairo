@@ -2,12 +2,14 @@
 // Address all the TODOs to make the tests pass!
 // Execute `starklings hint enums3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 use debug::PrintTrait;
 
 #[derive(Drop, Copy)]
 enum Message { // TODO: implement the message variant types based on their usage below
+    ChangeColor: (u8, u8, u8),
+    Echo: felt252,
+    Move: Point,
+    Quit: (),
 }
 
 #[derive(Drop, Copy)]
@@ -16,7 +18,7 @@ struct Point {
     y: u8,
 }
 
-#[derive(Drop, Copy)]
+#[derive(Copy)]
 struct State {
     color: (u8, u8, u8),
     position: Point,
@@ -52,7 +54,13 @@ impl StateImpl of StateTrait {
     fn process(
         ref self: State, message: Message
     ) { // TODO: create a match expression to process the different message variants
-    // Remember: When passing a tuple as a function argument, you'll need extra parentheses: fn function((t, u, p, l, e))
+        // Remember: When passing a tuple as a function argument, you'll need extra parentheses: fn function((t, u, p, l, e))
+        match message {
+            Message::ChangeColor(new_color) => self.change_color(new_color),
+            Message::Echo(s) => self.echo(s),
+            Message::Move(p) => self.move_position(p),
+            Message::Quit(()) => self.quit(),
+        }
     }
 }
 
@@ -74,15 +82,15 @@ fn test_match_message_call() {
 }
 
 
-impl TripleTuplePartialEq of PartialEq<(u8, u8, u8)> {
+impl TripleTuplePartialEq of PartialEq::<(u8, u8, u8)> {
     #[inline(always)]
-    fn eq(lhs: (u8, u8, u8), rhs: (u8, u8, u8)) -> bool {
-        let (a0, a1, a2) = lhs;
-        let (b0, b1, b2) = rhs;
+    fn eq(a: (u8, u8, u8), b: (u8, u8, u8)) -> bool {
+        let (a0, a1, a2) = a;
+        let (b0, b1, b2) = b;
         a0 == b0 & a1 == b1 & a2 == b2
     }
     #[inline(always)]
-    fn ne(lhs: (u8, u8, u8), rhs: (u8, u8, u8)) -> bool {
-        !(lhs == rhs)
+    fn ne(a: (u8, u8, u8), b: (u8, u8, u8)) -> bool {
+        !(a == b)
     }
 }
